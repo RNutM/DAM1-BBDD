@@ -1,0 +1,8 @@
+Socios (#Cod_socio, Entregas_uva)
+Operarios (#Cod_operario)
+Actuacion (#Cod_actuacion)
+Op_Mantenimiento (#Cod_operacion, descripcion, -Cod_actuacion)
+Tinajas (#Cod_tinaja, litros)
+Remolques (#Cod_remolque, peso, cod_uva, -Cod_socio)
+Socios_entregan_uvas (-Cod_socio, -Cod_remolque, Tipo_uva, Grado_mosto, Fecha_entrega, Numero_entregas)
+Operacio_realiza_actuacion (-Cod_operario, -Cod_tinaja, -Cod_operacion)

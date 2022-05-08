@@ -1,0 +1,13 @@
+Socios (#Cod_socio, Nombre)
+Remolques (#Cod_remolque, Tara, -Cod_socio)
+Socios_entregan_remolques (-Cod_socio, -Cod_remolque, num_entrega, fecha, tipo_uva, peso_bruto, grado)
+Tinajas (#Cod_tinaja, capacidad)
+Socios_almacenan (-Cod_socio, -Cod_remolque, -Cod_tinaja, fecha_almacen, litros_socio)
+Operarios (#Id_operario, Nombre)
+Op_Mantenimiento (#Cod_operacion, Descripcion)
+Operarios_realizan_mantenimiento (-Cod_tinaja, -Id_operario, -Cod_operacion, fecha)
+Op_mantenimiento_tienen_actuaciones(-Cod_operacion, -Cod_actuacion)
+
+
+La almohadilla # --> Clave primaria
+El guión - --> Clave extranjera

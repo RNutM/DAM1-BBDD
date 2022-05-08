@@ -1,0 +1,14 @@
+Ciudadanos (#Cod_Ciudadano, DNI, Nombre, Apellidos)
+Agencias (#Cod_Agencia, Nombre_Agencia, Direccion)
+Paquetes (#Cod_Paquete, Fecha_Salida, Fecha_Llegada, Recorrido, Precio)
+Ciudadanos_contratan_paquetes (-Cod_Ciudadano, -Cod_Agencia, -Cod_Paquete, Fecha_Contrato)
+Mayoristas (#Cod_Mayorista, Nombre_Mayorista, Direccion)
+Agencias_confeccionan_paquetes(-Cod_Agencia, -Cod_Paquete, -Cod_Mayorista)
+Paquetes_Grupos (-Cod_Paquete, Personas)
+Paquetes_Familiares (-Cod_Paquete, Num_Niños)
+Paquetes_Parejas (-Cod_Paquete, Antigüedad)
+Paquetes_Individuales (-Cod_Paquete, Estado)
+Paises (#Cod_Pais, Pais)
+
+La almohadilla # es clave primaria
+El guión - es clave extranjera
