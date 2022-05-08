@@ -2,7 +2,7 @@
  Ejercicios BBDD (Bases de datos) DAM1
 
 * Abre los archivos PDF (DAM1-BBDD\Unidades\*.pdf) para ver las tareas que hice durante el grado.
-* En la carpeta Ejercicios DIA tengo algunos ejercicios de MER hecho con el programa (Dia Diagram Editor)
+* En la carpeta Ejercicios DIA tengo algunos ejercicios de MER hechos con el programa (Dia Diagram Editor)
 
 * Proyectos 2018-2019
 *******************************************************************

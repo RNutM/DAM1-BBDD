@@ -1,0 +1,70 @@
+cmd modo admin
+
+
+1. sqlplus "/as sysdba"
+
+2. create user DB3 identified by DB3;
+
+2. grant connect,dba to bd3; (Asignar privilegios)
+
+4. connect DB3/DB3
+
+5. ejecutar script
+
+6. commit;
+
+
+
+Ver, Crear o borrar un usuario en oracle con SQLplus
+
+Para crear un usuario desde SQLplus se realzia lo siguiente:
+
+1. Iniciar sqlplus en linea de comandos: (Windos: ejecutar – cmd- sqlplus system/pass@nombre_baseDatos)
+
+2. sql> create user “nombre” identified by “contraseña” default tablespace “users” temporary tablespace “temp”;
+
+Al ejecutar la instrucción nos habrá creado el usuario. Ahora habrá que otorgarle ciertos permisos.
+
+3.  grant connect , resource to “nombre” - en nuestro caso el resource es dba
+
+Y con eso tenemos creado nuestro usuario (esquema de base de datos).
+
+Nombre = “Nombre de usuario o esquema que queremos crear”
+
+Users= “Tabla users, puede ser system, users, etc”
+
+ 
+
+Para borrar un usuario realizamos la siguiente instruccion:
+
+Drop user “usuario”;
+
+En caso de que tenga tablas y esten relacionadas colocamos:
+
+Drop user “usuario” cascade;
+
+ 
+
+Si queremos ver los usuarios de nuestra Db realizamos la siguiente instruccion:
+
+Select * from all_users;
+
+
+Para solucionar el error "ORA-28001" Cuando ha caducado la contraseña
+
+cmd modo admin
+
+1. sqlplus "/as sysdba"
+
+2. Verifica el tiempo de expiración usando la siguiente consulta: “SELECT * FROM DBA_PROFILES WHERE RESOURCE_NAME = ‘PASSWORD_LIFE_TIME’ AND PROFILE = ‘DEFAULT’;”
+
+3. Ejecuta la siguiente instruccion: “ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;”
+
+4. Si tienes una base de datos plugabble hay que entrar a contenedor: “ALTER SESSION SET CONTAINER = {nombre_pdb};” y después ejecutar nuevamente el comando del paso 3.
+ALTER SESSION SET CONTAINER = agencia; pero esta bd no es plugabble asés que voy al paso 6.
+
+5. Verifica nuevamente el tiempo de expiración con la consulta del paso 2, en esta ocasión debe de aparecer “UNLIMITED”.
+
+6. Ahora cambia el password del usuario, puede ser el mismo que antes tenía “ALTER USER {nombre_usuario} IDENTIFIED BY {mi_password_nuevo};”
+ALTER USER agencia IDENTIFIED BY agencia; ALTER USER jardineria IDENTIFIED BY jardineria;
+7. Ya está.
