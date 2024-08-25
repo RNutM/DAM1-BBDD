@@ -1,6 +1,9 @@
 cmd modo admin
 
 
+PRIMERO SI NO DEJA CREAR POR EL ROL:
+alter session set "_ORACLE_SCRIPT" = true;
+
 1. sqlplus "/as sysdba"
 
 2. create user DB3 identified by DB3;
